@@ -1,0 +1,5 @@
+"REDX1005": {
+  status: "Shipped",
+  courier: "RedX",
+  lastUpdate: "May 30, 2025"
+},
