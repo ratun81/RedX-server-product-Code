@@ -1,0 +1,61 @@
+<script>
+  const trackingData = {
+    "REDX1001": {
+      status: "Delivered",
+      courier: "RedX",
+      lastUpdate: "May 28, 2025"
+    },
+    "REDX1002": {
+      status: "Out for Delivery",
+      courier: "RedX",
+      lastUpdate: "May 29, 2025"
+    },
+    "REDX1003": {
+      status: "Cancelled",
+      courier: "RedX",
+      lastUpdate: "May 27, 2025"
+    },
+    "REDX101": {
+      // Custom message for REDX101 - we won't use this object in normal way
+      status: "Special Case"
+    }
+  };
+
+  function trackParcel() {
+    const id = document.getElementById("trackInput").value.trim().toUpperCase();
+    displayTracking(id);
+  }
+
+  function displayTracking(id) {
+    const resultBox = document.getElementById("result");
+
+    if (id === "REDX101") {
+      // Custom message for REDX101
+      resultBox.innerHTML = `
+        <strong>Your parcel is shipped.</strong><br>
+        Your product code _error networking problem.<br>
+        Contact RedX rider.
+      `;
+      return;
+    }
+
+    const data = trackingData[id];
+    if (data) {
+      resultBox.innerHTML = `
+        <strong>Status:</strong> ${data.status}<br>
+        <strong>Courier:</strong> ${data.courier}<br>
+        <strong>Last Update:</strong> ${data.lastUpdate}
+      `;
+    } else {
+      resultBox.innerHTML = `<span style="color: red;">❌ Tracking ID not found.</span>`;
+    }
+  }
+
+  // Load from URL
+  const params = new URLSearchParams(window.location.search);
+  const idFromUrl = params.get('id');
+  if (idFromUrl) {
+    document.getElementById("trackInput").value = idFromUrl.toUpperCase();
+    displayTracking(idFromUrl.toUpperCase());
+  }
+</script>
