@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parcel Partner - Track Your Parcel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background-color: #E7131A;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+    }
+    nav {
+      background-color: #c81010;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #fff;
+    }
+    .hero h1 {
+      color: #E7131A;
+    }
+    .tracking-box {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      font-size: 16px;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    input {
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #E7131A;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 5px;
+      font-size: 16px;
+      background-color: #f1f1f1;
+    }
+    section {
+      padding: 40px 20px;
+      background: #fff;
+      margin-top: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f1f1f1;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>Parcel Partner</header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#how">How It Works</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="hero" id="home">
+    <h1>Track Your Parcel</h1>
+    <div class="tracking-box">
+      <input type="text" id="trackInput" placeholder="Enter Tracking ID (e.g. REDX1001)">
+      <button onclick="trackParcel()">Track</button>
+      <div class="result" id="result"></div>
+    </div>
+  </div>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Parcel Partner is your trusted delivery assistant, helping you track parcels quickly and manually. Built for sellers who want to offer transparency and trust.</p>
+  </section>
+
+  <section id="how">
+    <h2>How It Works</h2>
+    <p>We manually update tracking IDs and delivery status. Once you place an order, we send you a unique tracking ID. Use it above to check your parcel status.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Need help? Message us on our ordering page. We're always here to support your delivery journey.</p>
+  </section>
+
+  <footer>
+    Powered by Parcel Partner &copy; 2025
+  </footer>
+
+  <script>
+    const trackingData = {
+      "REDX1001": {
+        status: "Delivered",
+        courier: "RedX",
+        lastUpdate: "May 28, 2025"
+      },
+      "REDX1002": {
+        status: "Out for Delivery",
+        courier: "RedX",
+        lastUpdate: "May 29, 2025"
+      },
+      "REDX1003": {
+        status: "Cancelled",
+        courier: "RedX",
+        lastUpdate: "May 27, 2025"
+      }
+    };
+
+    function trackParcel() {
+      const id = document.getElementById("trackInput").value.trim().toUpperCase();
+      displayTracking(id);
+    }
+
+    function displayTracking(id) {
+      const data = trackingData[id];
+      const resultBox = document.getElementById("result");
+
+      if (data) {
+        resultBox.innerHTML = `
+          <strong>Status:</strong> ${data.status}<br>
+          <strong>Courier:</strong> ${data.courier}<br>
+          <strong>Last Update:</strong> ${data.lastUpdate}
+        `;
+      } else {
+        resultBox.innerHTML = `<span style="color: red;">❌ Tracking ID not found.</span>`;
+      }
+    }
+
+    // Load from URL
+    const params = new URLSearchParams(window.location.search);
+    const idFromUrl = params.get('id');
+    if (idFromUrl) {
+      document.getElementById("trackInput").value = idFromUrl;
+      displayTracking(idFromUrl);
+    }
+  </script>
+</body>
+</html>
