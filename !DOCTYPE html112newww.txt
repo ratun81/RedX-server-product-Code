@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parcel Partner - Track Your Parcel</title>
+  <title>RedX Courier - Track Your Parcel</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
@@ -104,12 +104,12 @@
 
   <section id="about">
     <h2>About Us</h2>
-    <p>Parcel Partner is your trusted delivery assistant, helping you track parcels quickly and manually. Built for sellers who want to offer transparency and trust.</p>
+    <p>Parcel Partner is your trusted delivery assistant, helping you track parcels quickly and . Built for sellers who want to offer transparency and trust.</p>
   </section>
 
   <section id="how">
     <h2>How It Works</h2>
-    <p>We manually update tracking IDs and delivery status. Once you place an order, we send you a unique tracking ID. Use it above to check your parcel status.</p>
+    <p>We  update tracking IDs and delivery status. Once you place an order, we send you a unique tracking ID. Use it above to check your parcel status.</p>
   </section>
 
   <section id="contact">
@@ -118,12 +118,12 @@
   </section>
 
   <footer>
-    Powered by Parcel Partner &copy; 2025
+    Powered by RedX
   </footer>
 
   <script>
     const trackingData = {
-      "REDX1001": {
+      "Enter your ID": {
         status: "Delivered",
         courier: "RedX",
         lastUpdate: "May 28, 2025"
