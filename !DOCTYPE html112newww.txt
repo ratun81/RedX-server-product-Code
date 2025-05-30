@@ -1,7 +1,4 @@
-<section id="how-it-works">
-  <h2>How It Works</h2>
-  <!-- content here -->
-</section>
+
 <Trusted Courier>
 <html lang="en">
 <head>
@@ -174,3 +171,7 @@
   </script>
 </body>
 </html>
+<section id="how-it-works">
+  <h2>How It Works</h2>
+  <!-- content here -->
+</section>
