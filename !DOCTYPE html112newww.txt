@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<Trusted Courier>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -86,7 +86,7 @@
   </style>
 </head>
 <body>
-  <header>Parcel Partner</header>
+  <header>RedX Courier</header>
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
@@ -109,7 +109,7 @@
 
   <section id="how">
     <h2>How It Works</h2>
-    <p>We  update tracking IDs and delivery status. Once you place an order, we send you a unique tracking ID. Use it above to check your parcel status.</p>
+    <p>We update tracking IDs and delivery status. Once you place an order, we send you a unique tracking ID. Use it above to check your parcel status.</p>
   </section>
 
   <section id="contact">
