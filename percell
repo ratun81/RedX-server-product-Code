@@ -1,0 +1,8 @@
+const trackingData = {
+  "REDX1001": {
+    status: "Delivered",
+    courier: "RedX",
+    lastUpdate: "May 28, 2025"
+  },
+  // other tracking IDs here...
+};
