@@ -1,0 +1,29 @@
+<!-- firebase.js -->
+<script type="module">
+  // Import the necessary functions
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+  import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
+  import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAbZEZRe4kyL1G_6soiZG01MKPFeWI1jXQ",
+    authDomain: "firestore-4aec9.firebaseapp.com",
+    projectId: "firestore-4aec9",
+    storageBucket: "firestore-4aec9.firebasestorage.app",
+    messagingSenderId: "368773812",
+    appId: "1:368773812:web:1f6f8e51dcd58dca48e5e1",
+    measurementId: "G-G0C3QFM5N0"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const auth = getAuth(app);
+
+  // Make db and auth available globally
+  window.db = db;
+  window.auth = auth;
+  window.signInWithEmailAndPassword = signInWithEmailAndPassword;
+  window.doc = doc;
+  window.getDoc = getDoc;
+  window.setDoc = setDoc;
+</script>
